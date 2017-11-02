@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>WebEditor</title>
+
+	<!--<script src="https://cdn.alloyui.com/3.0.1/aui/aui-min.js"></script>-->
+	<script src="src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="lib/require.js"></script>
+
+	<script src = "initializer.js"></script>
+
+	<!--CDN para css de bootstrap-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<style type="text/css">
+		.bg-primary {
+    		background-color: #616161;
+    		width: 100%;
+		}
+
+		.treePrinter{
+			height: 400px;
+			overflow-y: scroll;
+		}
+
+	</style>
+
+</head>
+
+<body>
+
+	<nav class="navbar navbar-default">
+
+  		<div class="container-fluid">
+
+	    	<div class="navbar-header">
+	      		<a class="navbar-brand" href="#">WebEditor</a>
+	    	</div>
+
+		    <ul class="nav navbar-nav">
+		      <li><a href="#"><span id="play" class="glyphicon glyphicon-play"></span></a></li>
+		      <li><a href="#"><span id="fileChooser" class="glyphicon glyphicon-folder-open"></span></a></li>
+		      <li><a href="#">Watch <span class="glyphicon glyphicon-tree-deciduous"></span></a></li>
+                <li><a href="#">Watch <span id="execute" class="glyphicon glyphicon-tree-deciduous"></span></a></li>
+		    </ul>
+
+  		</div>
+
+	</nav>
+
+	<!--Sistema de grilla responsive-->
+	<div class="container">
+
+	  	<div class="row">
+	    	<div class="col-md-7">
+
+	    		<!--Editor de texto-->
+				<div id="myEditor" style="background-color: black; height: 400px; width: 100%;"></div>
+
+	    	</div>
+
+	    	<div class="col-md-5">
+				<textarea style="height: 400px; width: 455px;" id="messages"></textarea>
+	    	</div>
+
+	  	</div>
+
+	  	<div class="row">
+		    <div class="col-md-12">
+		    	<!--Aqui se mostraran los errores que salgan de la compilacion en general-->
+				<div class="container bg-primary">
+					<form>
+					    <div class="form-group">
+					      <label for="comment">Console</label>
+					      <textarea style="color:red" class="form-control" rows="7" id="comment" readonly></textarea>
+						</div>
+					</form>
+				</div>
+		    </div>
+	  	</div>
+
+	</div>
+
+
+	<input id="file-input" type="file" name="name" style="display: none;" />
+
+</body>
+
+</html>
